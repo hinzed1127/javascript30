@@ -1,0 +1,41 @@
+body {
+	width: 800px;
+	text-align: center;
+	margin: 0 auto;
+
+	font-family: -apple-system, BlinkMacSystemFont, 
+    "Segoe UI", "Roboto", "Oxygen", 
+    "Ubuntu", "Cantarell", "Fira Sans", 
+    "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+.clock {
+	width: 200px;
+	height: 200px;
+	border: 2px solid #000;
+	border-radius: 100%;
+	margin: 50px auto;
+	padding: 3px;
+}
+
+.hour-hand,
+.minute-hand,
+.second-hand {
+	width: 50%;
+	height: 2px;
+	position: relative;
+	top: 50%;
+	background: #000;
+	transform: rotate(90deg);
+	/* to initialize it to the
+	 * top of the clock
+	**/
+	transform-origin: 100%; 
+	/* moves the transform 
+	 * origin to the end of the
+	 * hand (ie, the far-right/center
+	 * of the clock)
+	**/
+	transition: all 1.0s linear;
+	transition-timing-function: ease-in;
+}
