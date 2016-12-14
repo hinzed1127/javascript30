@@ -4,38 +4,38 @@ const secondHand = document.querySelector('.second-hand');
 
 function setTime() {
 	const date = new Date();
+	const refDate = new Date(date.getFullYear(),
+							 date.getMonth(),
+							 date.getDate(),
+							 0, 0, 0);
+	const milliseconds = date.getTime() - refDate.getTime();
 
-	const hours = date.getHours()%12;
-	const minutes = date.getMinutes();
-	const seconds = date.getSeconds();
+	const hours = milliseconds/(1000*60*60)%12;
+	const minutes = (hours*60);
+	const seconds = (minutes*60);
 
+	// console.log(`${hours}\n${minutes%60}\n${seconds%60}`);
 	setHours(hours, minutes, seconds);
 	setMinutes(hours, minutes, seconds);
 	setSeconds(hours, minutes, seconds);
 }
 
 function setHours(hours, minutes, seconds) {
-	const hourDegrees = (hours/12)*360 + (minutes/60)*(360/12) + 90;
+	const hourDegrees = (hours/12)*360 + 90;
 
 	hourHand.style.transform = `rotate(${hourDegrees}deg)`;
 }
 
 function setMinutes(hours, minutes, seconds) {
-	const minuteDegrees = (minutes/60)*360 + (seconds/60)*(360/60) + 90;
+	const minuteDegrees = (minutes/60)*360 + 90;
 
 	minuteHand.style.transform = `rotate(${minuteDegrees}deg)`;
 }
 
 function setSeconds(hours, minutes, seconds) {
-	const secondDegrees = (seconds/60)*360 + 90;
+	let secondDegrees = (seconds/60)*360 + 90;
 
-	if(seconds === 0) {
-		secondHand.style.transform = 'rotate(360deg)';
-		console.log('here');
-	} else {
-		secondHand.style.transform = `rotate(${secondDegrees}deg)`;
-		console.log(seconds);
-	}
+	secondHand.style.transform = `rotate(${secondDegrees}deg)`;
 }
 
 setInterval(setTime, 1000);

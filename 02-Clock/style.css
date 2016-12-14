@@ -39,11 +39,6 @@ body {
 .hour-hand {
 	width: 35%;
 	left: 15%; /* offset width to center */
-	transform:rotate(180deg);
-}
-
-.minute-hand {
-	transform: rotate(270deg);
 }
 
 .second-hand {
