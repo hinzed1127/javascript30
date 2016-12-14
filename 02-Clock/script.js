@@ -14,6 +14,7 @@ function setHours(date) {
 	const hours = date.getHours()%12;
 	const hourDegrees = (hours/12)*360 + 90;
 
+	// TODO: Make the hand move incrementally throughout the hour,too
 	hourHand.style.transform = `rotate(${hourDegrees}deg)`;
 }
 
@@ -21,6 +22,7 @@ function setMinutes(date) {
 	const minutes = date.getMinutes();
 	const minuteDegrees = (minutes/60)*360 + 90;
 
+	// TODO: make the hand move incrementally throughout the minute, too
 	minuteHand.style.transform = `rotate(${minuteDegrees}deg)`;
 }
 
@@ -31,7 +33,7 @@ function setSeconds(date) {
 	if(seconds === 60) {
 		secondHand.style.transition =  'none';
 	}
-	
+
 	secondHand.style.transform = `rotate(${secondDegrees}deg)`;
 
 	if(seconds === 60) {

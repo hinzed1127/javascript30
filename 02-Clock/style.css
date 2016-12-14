@@ -3,9 +3,9 @@ body {
 	text-align: center;
 	margin: 0 auto;
 
-	font-family: -apple-system, BlinkMacSystemFont, 
-    "Segoe UI", "Roboto", "Oxygen", 
-    "Ubuntu", "Cantarell", "Fira Sans", 
+	font-family: -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans",
     "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
@@ -15,27 +15,88 @@ body {
 	border: 2px solid #000;
 	border-radius: 100%;
 	margin: 50px auto;
-	padding: 3px;
+	padding: 20px;
+	position: relative;
 }
 
-.hour-hand,
-.minute-hand,
-.second-hand {
+.clock-face {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	/*transform: translateY(-4%);*/
+}
+.hand {
 	width: 50%;
 	height: 2px;
-	position: relative;
+	position: absolute;
 	top: 50%;
 	background: #000;
 	transform: rotate(90deg);
-	/* to initialize it to the
-	 * top of the clock
-	**/
-	transform-origin: 100%; 
-	/* moves the transform 
-	 * origin to the end of the
-	 * hand (ie, the far-right/center
-	 * of the clock)
-	**/
-	transition: all 1.0s linear;
-	transition-timing-function: ease-in;
+	transform-origin: 100%;
+	transition: all 1s;
+	transition-timing-function: linear;
+}
+
+.hour-hand {
+	width: 35%;
+	left: 15%; /* offset width to center */
+	transform:rotate(180deg);
+}
+
+.minute-hand {
+	transform: rotate(270deg);
+}
+
+.number {
+	position: absolute;
+	top: 46%;
+	left: 47.4%;
+}
+
+.one {
+	transform: rotate(300deg) translate(110px) rotate(-300deg);
+}
+
+.two {
+	transform: rotate(330deg) translate(110px) rotate(-330deg);
+}
+
+.three {
+	transform: translate(110px);
+}
+
+.four {
+	transform: rotate(30deg) translate(110px) rotate(-30deg);
+}
+
+.five {
+	transform: rotate(60deg) translate(110px) rotate(-60deg);
+}
+
+.six {
+	transform: rotate(90deg) translate(110px) rotate(-90deg);
+}
+
+.seven {
+	transform: rotate(120deg) translate(110px) rotate(-120deg);
+}
+
+.eight {
+	transform: rotate(150deg) translate(110px) rotate(-150deg);
+}
+
+.nine {
+	transform: rotate(180deg) translate(110px) rotate(-180deg);
+}
+
+.ten {
+	transform: rotate(210deg) translate(110px) rotate(-210deg);
+}
+
+.eleven {
+	transform: rotate(240deg) translate(110px) rotate(-240deg);
+}
+
+.twelve {
+	transform: rotate(270deg) translate(110px) rotate(-270deg);
 }
