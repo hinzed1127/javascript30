@@ -15,7 +15,7 @@ body {
 	border: 2px solid #000;
 	border-radius: 100%;
 	margin: 50px auto;
-	padding: 20px;
+	padding: 25px;
 	position: relative;
 }
 
@@ -23,7 +23,6 @@ body {
 	position: relative;
 	width: 100%;
 	height: 100%;
-	/*transform: translateY(-4%);*/
 }
 .hand {
 	width: 50%;
@@ -47,6 +46,10 @@ body {
 	transform: rotate(270deg);
 }
 
+.second-hand {
+	background: #f00;
+}
+
 .number {
 	position: absolute;
 	top: 46%;
@@ -54,49 +57,49 @@ body {
 }
 
 .one {
-	transform: rotate(300deg) translate(110px) rotate(-300deg);
+	transform: rotate(300deg) translate(115px) rotate(-300deg);
 }
 
 .two {
-	transform: rotate(330deg) translate(110px) rotate(-330deg);
+	transform: rotate(330deg) translate(115px) rotate(-330deg);
 }
 
 .three {
-	transform: translate(110px);
+	transform: translate(115px);
 }
 
 .four {
-	transform: rotate(30deg) translate(110px) rotate(-30deg);
+	transform: rotate(30deg) translate(115px) rotate(-30deg);
 }
 
 .five {
-	transform: rotate(60deg) translate(110px) rotate(-60deg);
+	transform: rotate(60deg) translate(115px) rotate(-60deg);
 }
 
 .six {
-	transform: rotate(90deg) translate(110px) rotate(-90deg);
+	transform: rotate(90deg) translate(115px) rotate(-90deg);
 }
 
 .seven {
-	transform: rotate(120deg) translate(110px) rotate(-120deg);
+	transform: rotate(120deg) translate(115px) rotate(-120deg);
 }
 
 .eight {
-	transform: rotate(150deg) translate(110px) rotate(-150deg);
+	transform: rotate(150deg) translate(115px) rotate(-150deg);
 }
 
 .nine {
-	transform: rotate(180deg) translate(110px) rotate(-180deg);
+	transform: rotate(180deg) translate(115px) rotate(-180deg);
 }
 
 .ten {
-	transform: rotate(210deg) translate(110px) rotate(-210deg);
+	transform: rotate(210deg) translate(115px) rotate(-210deg);
 }
 
 .eleven {
-	transform: rotate(240deg) translate(110px) rotate(-240deg);
+	transform: rotate(240deg) translate(115px) rotate(-240deg);
 }
 
 .twelve {
-	transform: rotate(270deg) translate(110px) rotate(-270deg);
+	transform: rotate(270deg) translate(115px) rotate(-270deg);
 }

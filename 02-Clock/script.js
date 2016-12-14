@@ -5,39 +5,36 @@ const secondHand = document.querySelector('.second-hand');
 function setTime() {
 	const date = new Date();
 
-	setHours(date);
-	setMinutes(date);
-	setSeconds(date);
+	const hours = date.getHours()%12;
+	const minutes = date.getMinutes();
+	const seconds = date.getSeconds();
+
+	setHours(hours, minutes, seconds);
+	setMinutes(hours, minutes, seconds);
+	setSeconds(hours, minutes, seconds);
 }
 
-function setHours(date) {
-	const hours = date.getHours()%12;
-	const hourDegrees = (hours/12)*360 + 90;
+function setHours(hours, minutes, seconds) {
+	const hourDegrees = (hours/12)*360 + (minutes/60)*(360/12) + 90;
 
-	// TODO: Make the hand move incrementally throughout the hour,too
 	hourHand.style.transform = `rotate(${hourDegrees}deg)`;
 }
 
-function setMinutes(date) {
-	const minutes = date.getMinutes();
-	const minuteDegrees = (minutes/60)*360 + 90;
+function setMinutes(hours, minutes, seconds) {
+	const minuteDegrees = (minutes/60)*360 + (seconds/60)*(360/60) + 90;
 
-	// TODO: make the hand move incrementally throughout the minute, too
 	minuteHand.style.transform = `rotate(${minuteDegrees}deg)`;
 }
 
-function setSeconds(date) {
-	const seconds = date.getSeconds();
+function setSeconds(hours, minutes, seconds) {
 	const secondDegrees = (seconds/60)*360 + 90;
 
-	if(seconds === 60) {
-		secondHand.style.transition =  'none';
-	}
-
-	secondHand.style.transform = `rotate(${secondDegrees}deg)`;
-
-	if(seconds === 60) {
-		secondHand.style.transition =  'all 1s';
+	if(seconds === 0) {
+		secondHand.style.transform = 'rotate(360deg)';
+		console.log('here');
+	} else {
+		secondHand.style.transform = `rotate(${secondDegrees}deg)`;
+		console.log(seconds);
 	}
 }
 
